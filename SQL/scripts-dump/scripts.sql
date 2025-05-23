@@ -12,12 +12,17 @@ WHERE date_created > '2020-01-01'
 GROUP BY billing_type;
 
 /* 3 Lista de 20 pagadores (customer_account) com valores recebidos maiores que R$ 1.000,00 */
-SELECT A.customer_account_id, B.name, SUM(A.value) AS total_value
+SELECT 
+  A.customer_account_id, 
+  B.name, 
+  SUM(A.value) AS total_value
 FROM payment A 
 INNER JOIN customer B  
-ON A.customer_account_id = B.id
-WHERE value > 1000     
-GROUP BY customer_account_id
+ON A.customer_account_id = B.id  
+WHERE A.status = 'CONFIRMED'
+GROUP BY A.customer_account_id
+HAVING 
+  total_value > 1000
 LIMIT 20;
 
 /* 4 Primeiro nome dos clientes (customer) com análise geral aprovada (customer_regiter_status), ordenado por data de aprovação) */
