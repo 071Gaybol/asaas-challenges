@@ -1,10 +1,19 @@
-INSERT INTO clientes (nome, cpf_cnpj, tipo_cliente, email, telefone, endereco)
+INSERT INTO clientes (nome, cpf_cnpj, person_type, email, telefone, endereco)
 VALUES
-  ('João Silva', '12345678901', 'pagador', 'joao@email.com', '48999990001', 'Rua A, 100'),
-  ('Maria Souza', '23456789012', 'dono', 'maria@email.com', '48999990002', 'Rua B, 200'),
-  ('Carlos Lima', '34567890123', 'ambos', 'carlos@email.com', '48999990003', 'Rua C, 300'),
-  ('Ana Costa', '45678901234', 'pagador', 'ana@email.com', '48999990004', 'Rua D, 400'),
-  ('Fernanda Rocha', '56789012345', 'dono', 'fernanda@email.com', '48999990005', 'Rua E, 500');
+  ('João Silva', '12345678901', 'PJ', 'joao@email.com', '48999990001', 'Rua A, 100'),
+  ('Maria Souza', '23456789012', 'PJ', 'maria@email.com', '48999990002', 'Rua B, 200'),
+  ('Carlos Lima', '34567890123', 'PJ', 'carlos@email.com', '48999990003', 'Rua C, 300'),
+  ('Ana Costa', '45678901234', 'PF', 'ana@email.com', '48999990004', 'Rua D, 400'),
+  ('Fernanda Rocha', '56789012345', 'PJ', 'fernanda@email.com', '48999990005', 'Rua E, 500');
+
+  INSERT INTO pagadores (nome, cpf_cnpj, person_type, email, telefone, endereco)
+VALUES
+  ('João Silva', '12345678901', 'PF', 'joao@email.com', '48999990001', 'Rua A, 100'),
+  ('Carlos Lima', '34567890123', 'PF', 'carlos@email.com', '48999990003', 'Rua C, 300'),
+  ('Ana Costa', '45678901234', 'PF', 'ana@email.com', '48999990004', 'Rua D, 400');
+
+
+
   
 INSERT INTO cobrancas (pagador_id, dono_id, valor, descricao, data_vencimento, status)
 VALUES
