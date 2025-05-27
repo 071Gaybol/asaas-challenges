@@ -19,7 +19,7 @@ SELECT
 FROM payment A 
 INNER JOIN customer B  
 ON A.customer_account_id = B.id  
-WHERE A.status = 'CONFIRMED'
+WHERE A.status = 'RECEIVED'
 GROUP BY A.customer_account_id
 HAVING 
   total_value > 1000
